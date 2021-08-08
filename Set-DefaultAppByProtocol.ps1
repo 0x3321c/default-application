@@ -53,8 +53,15 @@ function Set-DefaultAppByProtocol {
     .LINK
     https://docs.microsoft.com/en-us/previous-versions/windows/internet-explorer/ie-developer/platform-apis/aa767914(v=vs.85)
 
+    Registering an Application to a URI Scheme with registry key. It is the former method to do it.
+
+     .LINK
+    https://docs.microsoft.com/en-us/windows/uwp/launch-resume/handle-uri-activation
+    
+    Handle URI activation or Registering an Application to a URI Scheme with xml file. It seems like the fashion method to do it.
+    
     .LINK
-    https://github.com/egiberne
+    https://github.com/egiberne/DefaultApplication
 
     .NOTES
 

@@ -1,2 +1,2 @@
 # DefaultApplication
-Define a default application
+Define a default application for windows 10.
