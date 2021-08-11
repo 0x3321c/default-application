@@ -2,15 +2,13 @@
 
 #Requires -RunAsAdministrator 
 
-
 function Set-DefaultAppByProtocol { 
     <#
     .SYNOPSIS
     Defines the default application by protocol.
-
     .DESCRIPTION
-    Defines settings in computer context instead of in user context user.
-    The script updates the machine registry hive (HKCR) with new entries/values.
+    Defines settings in computer and user context.
+    The cmdlt updates the machine registry hives (HKCR,HKLM or HKCU) with new entries/values.
     The application is  provided as the default application to open.
     Base on Windows protocol Handle.
    
@@ -70,16 +68,20 @@ function Set-DefaultAppByProtocol {
     #>
     [cmdletbinding()]
     param (
-    [Parameter(Mandatory=$true  )] [string]$AppName,
-    [Parameter(Mandatory=$true  )] [string]$AppScheme,
-    [Parameter(Mandatory=$true  )] [string]$AppPath, 
-    # Parameter help description
-    [ValidateSet('HKCR', 'HKLM', 'HKCU')][string]$Hive,
-    [switch]$On
+        # Name of the application
+        [Parameter(Mandatory=$true  )] [string]$AppName,
+        # Name of the application scheme
+        [Parameter(Mandatory=$true  )] [string]$AppScheme,
+        # Path of the install directory of the application
+        [Parameter(Mandatory=$true  )] [string]$AppPath, 
+        # Different hive to register the protocol
+        [Parameter(Mandatory=$true  )] [ValidateSet('HKCR', 'HKLM', 'HKCU')][string]$Hive,
+        # Switch parameter for selecting simulation mode or real mode
+        [switch]$On
     )
     
     #Create a registry drive for the HKEY_CLASSES_ROOT registry hive
-    switch ($Target) {
+    switch ($Hive) {
         HKLM { $registryPath = "HKLM:SOFTWARE\Classes\$AppScheme" }
         HKCU { $registryPath = "HKCU:SOFTWARE\Classes\$AppScheme" }
         Default { 
