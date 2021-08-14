@@ -1,5 +1,5 @@
 # DefaultApps
-Select which application  is the default for windows 10 with powershell cmddlet.
+Select which application  is the default for Windows 10 with powershell cmdlet.
 
 ## Define default application by protocol
 Add a protocol for a application already installed or not installed.
