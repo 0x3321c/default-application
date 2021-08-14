@@ -57,8 +57,25 @@ function Get-DefautAppByProtocol {
         }
     }
 
-    Get-Item -Path $registryPath | Where-Object -Property "Property" -EQ "URL Protocol"
-    Get-Item -Path $registryPath | Select-Object * | Where-Object -Property "Property" -EQ "URL Protocol"
+    #Get-Item -Path $registryPath | Where-Object -Property "Property" -EQ "URL Protocol"
+    $AppProtocols = Get-Item -Path $registryPath | Select-Object * | Where-Object -Property "Property" -EQ "URL Protocol"
     
-     
+    #$isAppPath = Test-Path "$registryPath\shell\open\command"
+    
+
+    foreach ($ap in $AppProtocols){
+        [string] $AppPath =$ap.Name+"\shell\open\command"
+        
+        switch -Wildcard ($AppPath) {
+            "*USER*" { [string]  $path=$AppPath.Replace("HKEY_CURRENT_USER\","HKCU:") ; $path }
+            "*MACHINE*" { [string]  $path=$AppPath.Replace("HKEY_LOCAL_MACHINE\","HKLM:" ) ; $path  }
+            Default {[string]  $path=$AppPath.Replace("HKEY_CLASS_ROOT\","HKCR:") ; $path}
+        }
+        
+        [bool]$isAppPath = Test-Path $path
+        If($true -eq $isAppPath){
+        write-host "AppPath = $path" -ForegroundColor Green
+            
+        }
+    }
 } 
