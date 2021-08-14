@@ -6,6 +6,7 @@ function Set-DefaultAppByProtocol {
     <#
     .SYNOPSIS
     Defines the default application by protocol.
+
     .DESCRIPTION
     Defines settings in computer and user context.
     The cmdlt updates the machine registry hives (HKCR,HKLM or HKCU) with new entries/values.
@@ -20,7 +21,7 @@ function Set-DefaultAppByProtocol {
 
     .EXAMPLE
 
-    Set-DefaultAppByProtocol -AppName MyApp -AppScheme MySheme -AppPath C:\temp\MyAppPath 
+    Set-DefaultAppByProtocol -AppName MyApp -AppScheme MySheme -AppPath C:\temp\MyAppPath -Hive HKLM
     
     Running in planning mode, the protocol is not registred on the system as MySheme.    
 
@@ -39,6 +40,10 @@ function Set-DefaultAppByProtocol {
     .PARAMETER On
 
     Run the script in planning mode as 'WhatIf'.
+
+    .PARAMETER Hive
+
+    Specifies the root location in the registry.
 
     .INPUTS
 
@@ -59,7 +64,7 @@ function Set-DefaultAppByProtocol {
     Handle URI activation or Registering an Application to a URI Scheme with xml file. It seems like the fashion method to do it.
     
     .LINK
-    https://github.com/egiberne/DefaultApplication
+    https://github.com/egiberne/DefaultApps
 
     .NOTES
 
