@@ -3,7 +3,7 @@
 
 <!-- NAME -->
 # NAME
-**Default-File-Type* 
+**Default-File-Type**
 
 <!-- ABSTRACT -->
 ## ABSTRACT 
