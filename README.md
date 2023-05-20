@@ -29,7 +29,8 @@ Define the default file type
 ## QUICKSTART
 
 ### Prerequisites
-Get information about
+Open a PowerShell command, type the following :
+
 * Windows version ; Version must be 10 or alter
     * _Cmdlet_
     ```powershell
@@ -80,7 +81,9 @@ Distributed under the MIT license. See `LICENSE.txt` for more information.
 
 <!-- ACKNOWLEDGMENTS -->
 ## SEE ALSO
+[assoc](https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/assoc)
  
+[ftype](https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/ftype?source=recommendations) 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
