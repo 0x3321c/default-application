@@ -3,14 +3,16 @@
 
 <!-- NAME -->
 # NAME
-**Default-File-Type**
+**default-app-definition**
 
 <!-- ABSTRACT -->
 ## ABSTRACT 
-Define the default file type
+Set the file type and link type.
 
 <!-- ABOUT THE PROJECT -->
 ## DESCRIPTION
+
+Define the default file and protocol association.
 
 * What is it ?
      
