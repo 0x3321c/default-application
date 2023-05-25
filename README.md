@@ -2,8 +2,7 @@
 <a name="readme-top"></a>
 
 <!-- NAME -->
-# NAME
-**default-app-definition**
+# **DEFAULT APPLICATION**
 
 <!-- ABSTRACT -->
 ## ABSTRACT 
@@ -14,6 +13,8 @@ Set the file type and link type.
 
 Define the default file and protocol association.
 
+<!--FAQ -->
+## FAQ
 * What is it ?
      
     
